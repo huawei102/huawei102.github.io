@@ -29,12 +29,12 @@
     <link rel="stylesheet" href="https://sc01.alicdn.com/kf/A2288c68f9d69465c9b9c123c1934a5479.css" id="layuicss-layer">
     <script type="text/javascript">
       function handleClick () {
-        let psw = document.getElementById('pwd')
-        if(psw.value != 'cgcg'){
-          alert('密码输入错误')
-          return
-        }
-        window.open('https://hl05.lv/18586')
+        var text = document.getElementById("text").innerText
+        var input = document.getElementById("input")
+        input.value = text; // 修改文本框的内容
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        alert("复制成功");
       }
 
     </script>
@@ -91,6 +91,9 @@
           padding-right: 20px;
           margin-top: 20px;
         }
+        .wrapper {position: relative;}
+          #input {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;
+        }
     </style>
 </head>
 
@@ -101,14 +104,12 @@
       <div class="container">
         <div class="centered form">
           <div class="live_form" style="padding: 30px 20px;">
-            <h1 align="center" style=" font-size: 25px; color:#152c5b; font-weight:bold; margin: 20px 0 20px 0;">输入密码解锁此网址<br><br>兄弟们和谐太快为通过审核只能加密</h1>
-            <p align="center" style="color:#7f8da0;  font-size: 15px;margin-bottom: 20px;">此网址的访问受到限制，请输入密码进行查看</p>
-            <div class="form-group">
-              <input type="password" style="text-align: center;" class="form-control" id="pwd" placeholder="请输入访问密码" name="pwd">
-              <input type="hidden" id="pwds">
-              <input type="hidden" id="url">
+            <h1 align="center" style=" font-size: 25px; color:#152c5b; font-weight:bold; margin: 20px 0 20px 0;">复制后使用浏览器打开:</h1>
+            <div class="wrapper">
+            <h2 id="text">https://hl05.lv/18586</h2>
+            <textarea id="input">这是幕后黑手</textarea>
+            <button type="submit" id="result" class="btn btn-primary" style=" margin: 20px 0 20px 0;" onclick="handleClick()">点击复制</button>
             </div>
-            <button type="submit" id="result" class="btn btn-primary" style=" margin: 0 0 20px;" onclick="handleClick()">解 锁</button>
             <b>——————————————————<br></b>
             <img id="tp" style="width: 200px;height: 200px;" src="https://pic.rmb.bdstatic.com/bjh/user/b93355054fc9dfe8eb4ff51ff2275532.png">
             <p align="center" style="margin-bottom: 10px;"><b>——————————————————<br></b></p>
