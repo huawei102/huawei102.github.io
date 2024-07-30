@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The iframe element</h1>
+
+<iframe src="https://6gods.dark06.com/28947" title="W3Schools Free Online Web Tutorials">
+</iframe>
+
+</body>
+</html>
