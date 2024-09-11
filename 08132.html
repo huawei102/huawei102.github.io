@@ -41,14 +41,27 @@
     const id = 29391;
 
     function handleClick (index) {
-        var copyipt = document.createElement("input");
-        var text = `${url[index]}${id}`;
-        copyipt.setAttribute("value", text);
-        document.body.appendChild(copyipt);
-        copyipt.select();
-        document.execCommand("copy");
-        alert("已成功复制地址，请使用浏览器打开观看");
-	    document.body.removeChild(copyipt);
+	if(index == 4)
+	{
+		var copyipt = document.createElement("input");
+		var text = `${url[index]}`;
+		copyipt.setAttribute("value", text);
+		document.body.appendChild(copyipt);
+		copyipt.select();
+		document.execCommand("copy");
+		alert("已成功复制地址，请使用浏览器打开");   
+		document.body.removeChild(copyipt);
+	}
+	else {  
+		var copyipt = document.createElement("input");
+                var text = `${url[index]}${id}`;
+                copyipt.setAttribute("value", text);
+                document.body.appendChild(copyipt);
+                copyipt.select();
+                document.execCommand("copy");
+                alert("已成功复制地址，请使用浏览器打开");
+	        document.body.removeChild(copyipt);
+	}
     }
 
 </script>
